@@ -5,12 +5,16 @@ import Task from './Task.js';
 const TaskList = (props) => {
     return (
         <View>
-            <Text>{props.tasks}</Text>
-            <FlatList data={[{name: 'task1', key: '1'}]} renderItem={({item}) => <Task task={item} key={item.key}/> }/>
+            <Text style={styles.tasksTitle}>Daily Goals</Text>
+            <FlatList data={props.tasks} renderItem={({item}) => <Task task={item} key={item.key} deleteTask={props.deleteTask}/> }/>
         </View>
     )
 }
 
 export default TaskList
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    tasksTitle: {
+        fontSize: 25
+    }
+})
