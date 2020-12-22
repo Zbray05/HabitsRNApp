@@ -20,7 +20,7 @@ const Task = (props) => {
             <Switch value={isEnabled} onValueChange={toggleSwitch}></Switch>
             <Text style={textStyle} onPress={toggleSwitch}>{props.task.name}</Text>
 
-           <Button color='red' title='delete' onPress={() => props.deleteTask(props.task.key)}/>
+           <View style={styles.buttonWrapper}><Button color='red' title='X' onPress={() => props.deleteTask(props.task.key)}/></View>
         </View>
     )
 }
@@ -33,11 +33,15 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     task:{
-        fontSize: 30,
-        marginRight: 'auto' ,
+        fontSize: 40,
     },
     taskStrike: {
         textDecorationLine: "line-through",
     },
+    buttonWrapper: {
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        marginBottom: 'auto'
+    }
 
 })
